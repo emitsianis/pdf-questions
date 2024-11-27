@@ -1,5 +1,3 @@
-import random
-
 from langchain.chat_models import ChatOpenAI
 
 from app.chat.chains.retrieval import StreamingConversationalRetrievalChain
@@ -47,4 +45,5 @@ def build_chat(chat_args: ChatArgs):
         condense_question_llm=condense_question_llm,
         memory=memory,
         retriever=retriever,
+        metadata=chat_args.metadata,
     )
